@@ -1,4 +1,4 @@
-import './main.css'
+import './main.css';
 
 const Main = () => {
     return (
@@ -6,4 +6,4 @@ const Main = () => {
     )
 }
 
-export default Main
+export default Main;
