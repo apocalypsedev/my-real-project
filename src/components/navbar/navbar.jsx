@@ -1,35 +1,25 @@
-import { FaFacebookSquare, FaTwitterSquare, FaGithubSquare, FaInstagramSquare } from "react-icons/fa";
-import { MdMarkEmailUnread } from "react-icons/md";
-
-import './navbar.css';
-import { Logo } from "../../assets"
+import { Link } from "react-router-dom"
+import { listItems } from "../../constants/data"
 const Navbar = () => {
     return (
-        <section>
-            <header>
-                <article>
-                    <FaFacebookSquare className="header__icons" />
-                    <FaTwitterSquare className="header__icons" />
-                    <FaGithubSquare className="header__icons" />
-                    <FaInstagramSquare className="header__icons" />
-                </article>
-                <article>
-                    <MdMarkEmailUnread className="header__icons" />
-                    <span id="head-text">example@gmail.com</span>
-                </article>
-            </header>
-            <nav className='navbar'>
-                <img src={Logo} alt="react-logo" className="animation" />
-                <ul>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Register</li>
-                    <li>Faq</li>
-                    <li>Blog</li>
-                </ul>
-            </nav>
-        </section>
+        <div className="flex items-center justify-between px-[112px] h-[10vh]">
+            <h2 className="text-[22px] font-[700]">PageOne<span className="text-pink-600">.</span></h2>
+            <ul className="flex items-center gap-12">
+                {
+                    listItems.map(item => (
+                        <Link
+                            to={item.url}
+                            key={item.link}
+                            className="duration-300 cursor-pointer hover:text-pink-500"
+                        >
+                            {item.link}
+                        </Link>
+                    ))
+                }
+            </ul>
+
+        </div>
     )
 }
 
-export default Navbar;
+export default Navbar
