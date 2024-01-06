@@ -1,7 +1,17 @@
 import { Route, Routes } from "react-router-dom";
-import { Footer, Main, Navbar, Login, About, Process, Clients, Services, Contact } from "./components";
+import { Footer, Main, Navbar, About, Process, Clients, Services, Contact, Auth } from "./components";
+import { useState } from "react";
 
 const App = () => {
+
+    const [user, setUser] = useState(false);
+
+    if(!user) {
+        return (
+            <Auth/>
+        )
+    }
+
     return (
         <>
             <Navbar />
@@ -12,7 +22,7 @@ const App = () => {
                 <Route path="/clients" element={<Clients />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/" element={<Login />} />
+                <Route path="s/" element={<Login />} />
             </Routes>
             <Footer />
         </>

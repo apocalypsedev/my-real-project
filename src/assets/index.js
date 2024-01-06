@@ -1,1 +1,5 @@
-export { default as Logo } from './react.svg'
+export { default as Logo }  from './react.svg'
+export { default as Img1}   from './service-images/img-1.jpg'
+export { default as Img2}   from './service-images/img-2.jpg'
+export { default as Img3}   from './service-images/img-3.jpg'
+export { default as Img4}   from './service-images/img-4.jpg'
