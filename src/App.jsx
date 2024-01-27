@@ -4,29 +4,30 @@ import { useState } from "react";
 
 const App = () => {
 
-    const [user, setUser] = useState(false);
+    const userToken = false;
 
-    if(!user) {
+    if(!userToken) {
         return (
             <Auth/>
         )
+    }else{
+        return (
+            <>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Main />} />
+                    <Route path="/services" element={<Services />} />
+                    <Route path="/process" element={<Process />} />
+                    <Route path="/clients" element={<Clients />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="s/" element={<Login />} />
+                </Routes>
+                <Footer />
+            </>
+        )
     }
 
-    return (
-        <>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Main />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/process" element={<Process />} />
-                <Route path="/clients" element={<Clients />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="s/" element={<Login />} />
-            </Routes>
-            <Footer />
-        </>
-    )
 }
 
 export default App;
